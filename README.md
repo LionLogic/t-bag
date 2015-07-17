@@ -7,5 +7,6 @@ A Ruby Gem for creating domain-specific languages for Text-Based Adventure Games
 Coming soon!
 
 ##Contact
-Benjamin S. Meyers < <meyers.bs@gmail.com> >
-Bryan T. Meyers < <meyers.bt@gmail.com> > < <http://www.datadrake.com/> >
+Benjamin S. Meyers < <lion.logic.org@gmail.com> >
+
+Bryan T. Meyers < <http://www.datadrake.com/> >
