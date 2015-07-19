@@ -20,8 +20,18 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+require_relative 'tbag/game'
+require_relative 'tbag/scene'
 require 'docile'
 
-class TBAG
+module T_BAG
+  def game(title, author, &block)
+    $game = T_BAG::Game.new(title,author)
 
+    Docile.dsl_eval($game, &block)
+  end
+
+  def run
+    $game.run
+  end
 end

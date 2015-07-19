@@ -24,11 +24,11 @@ Gem::Specification.new do |s|
   s.name        = 't-bag'
   s.version     = '0.0.0'
   s.date        = '2015-07-15'
-  s.summary     = "Text-Based Adventure Game Framework"
-  s.description = "A framework for implementing domain-specific languages for text-based adventure games."
-  s.authors     = ["Benjamin S. Meyers", "Bryan T. Meyers"]
-  s.email       = ['meyers.bs@gmail.com','meyers.bt@gmail.com']
-  s.files       = ["lib/tbag.rb"]
+  s.summary     = 'Text-Based Adventure Game Framework'
+  s.description = 'A framework for implementing domain-specific languages for text-based adventure games.'
+  s.authors     = ['Benjamin S. Meyers', 'Bryan T. Meyers']
+  s.email       = %w(lion.logic.org@gmail.com bmeyers@datadrake.com)
+  s.files       = Dir.glob('lib/**/*')
   s.homepage    = 'https://github.com/meyersbs/t-bag'
   s.license     = 'GPL-3.0'
 end
