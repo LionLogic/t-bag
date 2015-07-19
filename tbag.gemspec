@@ -19,16 +19,17 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+require_relative 'lib/tbag'
 
 Gem::Specification.new do |s|
   s.name        = 't-bag'
-  s.version     = '0.0.0'
-  s.date        = '2015-07-15'
+  s.version     = T_BAG::VERSION
+  s.date        = '2015-07-19'
   s.summary     = 'Text-Based Adventure Game Framework'
   s.description = 'A framework for implementing domain-specific languages for text-based adventure games.'
   s.authors     = ['Benjamin S. Meyers', 'Bryan T. Meyers']
   s.email       = %w(lion.logic.org@gmail.com bmeyers@datadrake.com)
   s.files       = Dir.glob('lib/**/*')
   s.homepage    = 'https://github.com/meyersbs/t-bag'
-  s.license     = 'GPL-3.0'
+  s.license     = 'MIT'
 end

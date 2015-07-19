@@ -25,6 +25,7 @@ require_relative 'tbag/scene'
 require 'docile'
 
 module T_BAG
+  VERSION = '0.0.1'
   def game(title, author, &block)
     $game = T_BAG::Game.new(title,author)
 
