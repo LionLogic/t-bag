@@ -63,6 +63,8 @@ module T_BAG
             putc "\n"
           when :prompt
             a[:prompt].run
+          when :sound
+            a[:sound].run
           else
             $stderr.puts '[SCENE] Action not allowed'
         end
