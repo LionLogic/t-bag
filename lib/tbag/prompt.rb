@@ -20,20 +20,50 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require_relative 'tbag/game'
-require_relative 'tbag/prompt'
-require_relative 'tbag/scene'
+require_relative '../tbag'
+
 require 'docile'
 
 module T_BAG
-  VERSION = '0.0.1'
-  def game(title, author, &block)
-    $game = T_BAG::Game.new(title, author)
+  class Prompt
+    def initialize(question, type, error)
+      @question = question
+      @type = type
+      @choices = {}
+      @error = error
+    end
 
-    Docile.dsl_eval($game, &block)
-  end
+    def choice(value, &block)
+      if value.is_a? String
+        value.downcase!
+      end
+      @choices[value] = Proc.new &block
+    end
 
-  def run
-    $game.run
+    def run
+      puts @question
+      done = false
+      until done
+        answer = gets.strip
+
+        if @type == Integer
+          unless answer.to_i == 0
+            answer = answer.to_i
+          end
+        elsif @type == String
+          answer.downcase!
+        end
+        if answer.is_a? @type and (@choices[answer] or @choices[:any])
+          if @choices[answer]
+            @choices[answer].call(answer)
+          else
+            @choices[:any].call(answer)
+          end
+          done = true
+        else
+          puts @error
+        end
+      end
+    end
   end
 end
