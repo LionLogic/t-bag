@@ -3,6 +3,23 @@
 ##Project Description
 A domain-specific language for text-based adventure games.
 
+- - - -
+##Project Goals
+
+* DSL including scenes, prompts, texts, choices, scene changes, and pauses.
+* Add special scene 'game over.'
+
+Fork:
+
+* Add ASCII world map.
+* Add map navigation.
+ 
+Fork:
+
+* Add audio playing functionality.
+* Add GUI
+* Add image displaying functionality.
+
 ##Example
 ``` ruby
 game 'Zork', 'Infocom' do
@@ -18,7 +35,7 @@ game 'Zork', 'Infocom' do
                 puts 'Opening the small mailbox reveals a leaflet.'
             end
         end
-        prompt '', String, 'I don't know that word.' do
+        prompt '', String, 'I don\'t know that word.' do
             choice 'read leaflet' do
                 scene_change :scene2
             end
