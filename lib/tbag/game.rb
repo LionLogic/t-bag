@@ -31,6 +31,7 @@ module T_BAG
       @author = author
       @scenes = {}
       @current_scene = nil
+      @start_scene = nil
       @next_scene = nil
     end
 
@@ -40,8 +41,15 @@ module T_BAG
       Docile.dsl_eval(scene, &block)
     end
 
+    def game_over(&block)
+      game_over = T_BAG::Game_Over.new
+      @scenes[:endgame] = game_over
+      Docile.dsl_eval(game_over, &block)
+    end
+
     def start(scene)
       @current_scene = scene
+      @start_scene = scene
     end
 
     def run
@@ -57,6 +65,10 @@ module T_BAG
 
     def next_scene(scene)
       @next_scene = scene
+    end
+
+    def reset
+      @next_scene = @start_scene
     end
   end
 end

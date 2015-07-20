@@ -46,6 +46,10 @@ module T_BAG
       Docile.dsl_eval(prompt, &block)
     end
 
+    def game_over
+      scene_change :endgame
+    end
+
     def run
       @actions.each do |a|
         case a[:type]
@@ -63,8 +67,6 @@ module T_BAG
             putc "\n"
           when :prompt
             a[:prompt].run
-          when :sound
-            a[:sound].run
           else
             $stderr.puts '[SCENE] Action not allowed'
         end

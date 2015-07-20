@@ -20,22 +20,19 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require_relative 'tbag/game'
-require_relative 'tbag/prompt'
-require_relative 'tbag/scene'
-require_relative 'tbag/game_over'
+require_relative '../tbag'
 
 require 'docile'
 
 module T_BAG
-  VERSION = '0.0.2'
-  def game(title, author, &block)
-    $game = T_BAG::Game.new(title, author)
+  class Game_Over < T_BAG::Scene
+    def initialize
+      super(:endgame, 'Game Over')
+    end
 
-    Docile.dsl_eval($game, &block)
-  end
-
-  def run
-    $game.run
+    def run
+      super
+      $game.reset
+    end
   end
 end
