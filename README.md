@@ -38,6 +38,10 @@ game 'Zork', 'Infocom' do
     end
 end
 ```
+
+- - - -
+The original Zork source code is copyright © 1978 Massachusetts Institute of Technology. All rights reserved.
+
 ##Release Notes
 Coming soon!
 
