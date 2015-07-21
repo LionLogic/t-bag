@@ -70,5 +70,40 @@ module T_BAG
     def reset
       @next_scene = @start_scene
     end
+
+    def save_game(outfile)
+      begin
+      if File.exist? outfile
+        out_file = File.open(outfile, 'r+')
+        out_file.puts @current_scene
+        out_file.close
+        puts 'Save Successful!'
+      else
+        out_file = File.new(outfile, 'w')
+        puts 'Created New Save File...'
+        out_file.puts @current_scene
+        out_file.close
+        puts 'Save Successful!'
+      end
+      rescue Exception => ex
+        puts 'Save Failed!'
+      end
+    end
+
+    def load_game(infile)
+      begin
+        if File.exist? infile
+          in_file = File.open(infile, 'r+')
+          state = in_file.gets.chomp.intern
+          #print state
+          next_scene state
+          puts 'Load Successful!'
+        else
+          puts 'File ' + String(infile) + ' not found.'
+        end
+      rescue
+        puts 'Load Failed!'
+      end
+    end
   end
 end

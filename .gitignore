@@ -3,3 +3,4 @@
 test/**/*
 *.gem
 projectFilesBackup/**/*
+*.sav

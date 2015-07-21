@@ -46,6 +46,14 @@ module T_BAG
       Docile.dsl_eval(prompt, &block)
     end
 
+    def save_game(outfile)
+      @actions << {type: :save, filename: outfile}
+    end
+
+    def load_game(infile)
+      @actions << {type: :load, filename: infile}
+    end
+
     def game_over
       scene_change :endgame
     end
@@ -67,6 +75,10 @@ module T_BAG
             putc "\n"
           when :prompt
             a[:prompt].run
+          when :save
+            $game.save_game a[:filename]
+          when :load
+            $game.load_game a[:filename]
           else
             $stderr.puts '[SCENE] Action not allowed'
         end
