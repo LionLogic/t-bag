@@ -33,6 +33,8 @@ module T_BAG
       @current_scene = nil
       @start_scene = nil
       @next_scene = nil
+      @menu_scene = nil
+      @called = false
     end
 
     def scene(name, title, &block)
@@ -47,9 +49,24 @@ module T_BAG
       Docile.dsl_eval(game_over, &block)
     end
 
+    def main_menu(&block)
+      main_menu = T_BAG::Main_Menu.new
+      @scenes[:menu] = main_menu
+      Docile.dsl_eval(main_menu, &block)
+    end
+
     def start(scene)
-      @current_scene = scene
-      @start_scene = scene
+      if @called == false
+        @current_scene = scene
+        @start_scene = scene
+        @called = true
+      else
+        @start_scene = scene
+      end
+    end
+
+    def menu(scene)
+      @menu_scene = scene
     end
 
     def run
@@ -69,6 +86,15 @@ module T_BAG
 
     def reset
       @next_scene = @start_scene
+    end
+
+    def tomenu
+      @next_scene = @menu_scene
+    end
+
+    def quit
+      puts 'Goodbye!'
+      exit
     end
 
     def save_game(outfile)
@@ -100,6 +126,7 @@ module T_BAG
           puts 'Load Successful!'
         else
           puts 'File ' + String(infile) + ' not found.'
+          reset
         end
       rescue
         puts 'Load Failed!'

@@ -58,6 +58,10 @@ module T_BAG
       scene_change :endgame
     end
 
+    def main_menu
+      scene_change :menu
+    end
+
     def run
       @actions.each do |a|
         case a[:type]

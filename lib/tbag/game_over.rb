@@ -32,7 +32,6 @@ module T_BAG
 
     def run
       super
-      $game.reset
     end
   end
 end
