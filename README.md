@@ -3,7 +3,6 @@
 ##Project Description
 A domain-specific language for text-based adventure games.
 
-- - - -
 ##Project Goals
 
 * DSL including scenes, prompts, texts, choices, scene changes, and pauses.
@@ -72,7 +71,6 @@ end
 run
 ```
 
-- - - -
 The original Zork source code is copyright © 1978 Massachusetts Institute of Technology. All rights reserved.
 
 ##Release Notes
