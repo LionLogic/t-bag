@@ -26,7 +26,7 @@ require_relative 'lib/tbag'
 Gem::Specification.new do |s|
   s.name        = 't-bag'
   s.version     = T_BAG::VERSION
-  s.date        = '2015-07-19'
+  s.date        = '2015-08-13'
   s.summary     = 'Text-Based Adventure Game Framework'
   s.description = 'A framework for implementing domain-specific languages for text-based adventure games.'
   s.authors     = ['Benjamin S. Meyers', 'Bryan T. Meyers']

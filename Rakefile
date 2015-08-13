@@ -26,6 +26,10 @@ task :build do
   system 'gem build tbag.gemspec'
 end
 
+task :install => :build do
+  system "sudo gem install -N -l t-bag-#{T_BAG::VERSION}.gem"
+end
+
 task :release => :build do
   system "gem push t-bag-#{T_BAG::VERSION}.gem"
 end
