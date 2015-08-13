@@ -1,8 +1,0 @@
-*~
-.idea/
-test/**/*
-*.gem
-projectFilesBackup/**/*
-*.sav
-.yardoc/**/*
-.gitignore
