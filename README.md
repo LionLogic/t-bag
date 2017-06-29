@@ -1,25 +1,27 @@
 # T-BAG: Text-Based Adventure Game Framework
 
-##Project Description
+## Project Description
+
 A domain-specific language for text-based adventure games.
 
-##Project Goals
+## Project Goals
 
 * DSL including scenes, prompts, texts, choices, scene changes, and pauses.
 * Add special scene 'game over.'
 
-Fork:
+#### Fork:
 
 * Add ASCII world map.
 * Add map navigation.
  
-Fork:
+#### Fork:
 
 * Add audio playing functionality.
 * Add GUI
 * Add image displaying functionality.
 
-##Example
+## Example
+
 ``` ruby
 require T_BAG
 
@@ -73,15 +75,18 @@ run
 
 The original Zork source code is copyright © 1978 Massachusetts Institute of Technology. All rights reserved.
 
-##Release Notes
+## Release Notes
+
 Coming soon!
 
-##Contact
-Benjamin S. Meyers < <lion.logic.org@gmail.com> >
+## Contact
+
+Benjamin S. Meyers < <ben@lion.logic.org> >
 
 Bryan T. Meyers < <bmeyers@datadrake.com> >
 
-##Licensing
+## Licensing
+
 The MIT License (MIT)
 
 Copyright (c) 2015 Benjamin Meyers as Lion Logic
